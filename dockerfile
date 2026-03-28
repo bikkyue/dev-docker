@@ -28,4 +28,8 @@ USER ${USERNAME}
 WORKDIR /home/${USERNAME}
 ENV USER=${USERNAME}
 
+RUN git clone https://github.com/bikkyue/dotfiles.git \
+    && cd dotfiles \
+    && bash install.sh
+
 ENTRYPOINT ["entrypoint.sh"]
