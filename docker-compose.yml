@@ -12,6 +12,7 @@ services:
       - ~/.ssh:/home/${USERNAME}/.ssh-host:ro
       # ホスト機よりClaude Code認証情報を取得（entrypoint.shでコピー）
       - ~/.claude:/home/${USERNAME}/.claude-host:ro
+      - ~/.claude.json:/home/${USERNAME}/.claude-host.json:ro
       # ホスト機よりCodex認証情報を取得（entrypoint.shでコピー）
       - ~/.codex:/home/${USERNAME}/.codex-host:ro
     environment:

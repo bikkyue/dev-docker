@@ -16,6 +16,11 @@ if [ -d "$HOME/.claude-host" ]; then
     sudo chown -R "$USER":"$USER" "$HOME/.claude"
 fi
 
+if [ -f "$HOME/.claude-host.json" ]; then
+    sudo cp "$HOME/.claude-host.json" "$HOME/.claude.json"
+    sudo chown "$USER":"$USER" "$HOME/.claude.json"
+fi
+
 # ホストからマウントしたCodex認証情報をコピーしてパーミッションを修正
 if [ -d "$HOME/.codex-host" ]; then
     mkdir -p "$HOME/.codex"
